@@ -5,8 +5,14 @@ const port = 5000;
 app.use(express.json());
 app.use(cors())
 
-let usuario="papaletas";
-let contraseña = "papalaletasaletas";
+
+let UsuariosRegistrados = [
+    {
+    usuario:"papaletas",
+    contraseña : "papalaletasaletas";
+},
+]
+
 
 
 
@@ -21,4 +27,10 @@ app.post('/login',async(req,res)=>{
 })
 app.listen(port,() =>{
     console.log(`Example app listening on port ${port}`)
+})
+
+app.post('/register', async(req,res)=>{
+    let usuario = req.body.usuario
+    let contraseña = req.body.contraseña
+
 })
