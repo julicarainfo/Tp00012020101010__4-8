@@ -4,22 +4,24 @@ import React from 'react';
 import { useState } from 'react';
 import { StyleSheet, Text, View,TextInput,Button} from 'react-native';
 import axios from 'axios';
-
+import register from './Register';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
+    const navigation = useNavigation();
     const [Usuario, setUsuario] = React.useState('');
-    const [Contraseña, setContraseña] = React.useState('');
+    const [contrasenna, setcontrasenna] = React.useState('');
 
   const cambiarContendioU = (t) =>{
     setUsuario(t)
   } 
   const cambiarContendioC = (c) =>{
-    setContraseña(c)
+    setcontrasenna(c)
   } 
   const handleClick = () => {
     let nuevoUsuario = {
       usuario: Usuario,
-      contraseña: Contraseña,
+      contrasenna: contrasenna,
     };
     console.log("usuario:", nuevoUsuario)
       axios.post("http://localhost:5000/login",nuevoUsuario)
@@ -37,12 +39,16 @@ export default function Login() {
       />
       <TextInput
         style={styles.input}
-        placeholder='Ingrese su contraseña'
+        placeholder='Ingrese su contrasenna'
         onChangeText={c => cambiarContendioC(c)}
         secureTextEntry={true}
-        value={Contraseña}
+        value={contrasenna}
       />      
       <Button onPress={handleClick} title="Ingresar" style={styles}></Button>
+      <Button
+        title="Registrarse"
+        onPress={() => navigation.navigate('Register')}
+      />
     </View>
   );
 }
