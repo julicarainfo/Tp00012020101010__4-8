@@ -28,14 +28,17 @@ app.post('/registrarse',async(req,res) =>{
 app.post('/login',async(req,res) =>{
     try{
         console.log(req.body)
-        const response = await Usuario.Login(req.body.usuario, req.body.contrasenna)
-        console.log(response);
-        if (response.length === 0) {
+        const u = await Usuario.Login(req.body.usuario, req.body.contrasenna)
+        console.log(req.body.usuario)
+        console.log(req.body.contrasenna)
+        console.log(u);
+        if (u.length === 0) {
+            console.log("HOLAHOLA;¡:", u)
             res.status(401).json({message: "Incorrecto"});
+            
         } else {
-            res.status(200).json({usuario: response})
+            res.status(200).json({u: "Usuario encontrado"})
         }
-        res.status(200).json({message : 'Usuario encontrado'})  
     }catch(error){
         console.log(error)
         res.status(404).json({error : 'No se encontro el usuario'})

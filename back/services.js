@@ -8,7 +8,7 @@ export class Usuario {
         try {
             let pool = await sql.connect(config)
             let result = await pool.request()
-                .input("pusuario", sql.NVarChar(4000), usuario)
+                .input("pUsuario", sql.NVarChar(4000), usuario)
                 .input("pContrasenna", sql.NVarChar(4000), contrasenna)
                 .query("SELECT * FROM Usuario WHERE usuario = @pUsuario AND Contrasenna = @pContrasenna");
             returnEntity = result.recordsets[0];
