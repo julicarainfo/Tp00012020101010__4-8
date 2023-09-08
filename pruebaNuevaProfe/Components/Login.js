@@ -2,32 +2,38 @@ import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useState } from 'react';
-import { StyleSheet, Text, View,TextInput,Button} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import axios from 'axios';
 import register from './Register';
 import { useNavigation } from '@react-navigation/native';
 
 export default function Login() {
-    const navigation = useNavigation();
-    const [Usuario, setUsuario] = React.useState('');
-    const [contrasenna, setcontrasenna] = React.useState('');
+  const navigation = useNavigation();
+  const [Usuario, setUsuario] = React.useState('');
+  const [contrasenna, setcontrasenna] = React.useState('');
 
-  const cambiarContendioU = (t) =>{
+  const cambiarContendioU = (t) => {
     setUsuario(t)
-  } 
-  const cambiarContendioC = (c) =>{
+  }
+  const cambiarContendioC = (c) => {
     setcontrasenna(c)
-  } 
+  }
   const handleClick = () => {
     let nuevoUsuario = {
       usuario: Usuario,
       contrasenna: contrasenna,
     };
     console.log("usuario:", nuevoUsuario)
-      axios.post("http://localhost:5000/login",nuevoUsuario)
-      .then(res => {
-        console.log("res.data: ",res.data)}
-      ) 
+    try {
+      axios.post("http://localhost:5000/login", nuevoUsuario)
+        .then(res => {
+          console.log("res.data: ", res.data)
+          navigation.navigate('Home', nuevoUsuario.usuario)
+        }
+        )
+    } catch (error) {
+      console.log("error")
+    }
   };
   return (
     <View style={styles.container}>
@@ -43,7 +49,7 @@ export default function Login() {
         onChangeText={c => cambiarContendioC(c)}
         secureTextEntry={true}
         value={contrasenna}
-      />      
+      />
       <Button onPress={handleClick} title="Ingresar" style={styles}></Button>
       <Button
         title="Registrarse"
@@ -59,7 +65,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
   },
-  input :{
+  input: {
     resizeMode: 'contain',
     borderWidth: 1,
   },

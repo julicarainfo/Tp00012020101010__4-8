@@ -26,4 +26,28 @@ export class Usuario {
             .input('Contrasenna', sql.NVarChar(4000), contrasenna)
             .query('INSERT INTO Usuario (usuario,Contrasenna) VALUES (@usuario, @contrasenna)')
     }
+
+    static getIdUsuarioByNombre = async(nombre) => {
+        let pool = await sql.connect(config);
+        let res = await pool.request()
+            .input("usuario", sql.NVarChar, nombre)
+            .query("SELECT id FROM usuario WHERE usuario = @usuario");
+        return res.recordset[0];
+    }
+
+    static Perfil = async (P) => {
+        const {usuario, nomnbre,apellido,fechaNacimiento} = P
+
+        let idUsuario = getIdUsuarioByNombre(usuario);
+
+        let pool = await sql.connect(config)
+        let result = await pool.request()
+            .input('fkUsuario', sql.NVarChar(4000),idUsuario )
+            .input('usuario', sql.NVarChar(4000),nombre )
+            .input('usuario', sql.NVarChar(4000),apellido )
+            .input('usuario', sql.Date,fechaNacimiento )
+            .input('usuario', sql.Int,fkUsuario )
+            .query('INSERT INTO Perfil (usuario,Contrasenna) VALUES (@usuario, @contrasenna)')
+    }
 }
+

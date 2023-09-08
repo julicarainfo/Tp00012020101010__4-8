@@ -16,9 +16,9 @@ app.post('/registrarse',async(req,res) =>{
         res.status(201).json({message: 'Usuario registrado'})
     } catch (error){
         console.log(error)
-        if (r.length === 0) {
+        /*if (r.length === 0) {
             res.status(500).json({error : 'Fallo el registro'})
-        }
+        }*/
         
     }
 

@@ -2,37 +2,46 @@ import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useState } from 'react';
-import { StyleSheet, Text, View,TextInput,Button} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function Register({navigation}) {
-    const [Usuario, setUsuario] = React.useState('');
-    const [contrasenna, setcontrasenna] = React.useState('');
+export default function Register() {
+  const navigation = useNavigation();
+  const [Usuario, setUsuario] = React.useState('');
+  const [contrasenna, setcontrasenna] = React.useState('');
 
-  const cambiarContendioU = (t) =>{
+  const cambiarContendioU = (t) => {
     setUsuario(t)
-  } 
-  const cambiarContendioC = (c) =>{
+  }
+  const cambiarContendioC = (c) => {
     setcontrasenna(c)
-  } 
-  const handleClick = () => {
+  }
+  const  handleClick = () => {
     let nuevoUsuario = {
       usuario: Usuario,
       contrasenna: contrasenna,
     };
     console.log("usuario:", nuevoUsuario)
-      axios.post("http://localhost:5000/registrarse",nuevoUsuario)
-      .then(res => {
-        console.log("res.data: ",res.data)}
-      ) 
+    try {
+     axios.post("http://localhost:5000/registrarse", nuevoUsuario)
+        .then(res => {
+          console.log("res.data: ", res.data)
+          navigation.navigate('Login')
+        }
+        )
+    }
+    catch (error) {
+
+    }
   };
+
   return (
     <View style={styles.container}>
-        <Text>
-            Registrarse
-        </Text>
+      <Text>
+        Registrarse
+      </Text>
       <TextInput
         style={styles.input}
         placeholder='Cree un usuario de usuario'
@@ -45,7 +54,7 @@ export default function Register({navigation}) {
         onChangeText={c => cambiarContendioC(c)}
         secureTextEntry={true}
         value={contrasenna}
-      />      
+      />
       <Button onPress={handleClick} title="Registrarse" style={styles}></Button>
     </View>
   );
@@ -57,7 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
   },
-  input :{
+  input: {
     resizeMode: 'contain',
     borderWidth: 1,
   },
