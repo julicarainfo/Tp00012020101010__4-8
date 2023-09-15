@@ -49,5 +49,25 @@ export class Usuario {
             .input('usuario', sql.Int,fkUsuario )
             .query('INSERT INTO Perfil (usuario,Contrasenna) VALUES (@usuario, @contrasenna)')
     }
+    static updateUsuario = async (usuario) => {
+        const { Id, Contraseña, Nombre, Apellido, fechaNacimiento} = usuario
+        let returnEntity = null;
+        console.log("Estoy en: update");
+        try {
+            let pool = await sql.connect(config)
+            let result = await pool.request()
+                .input('pId', sql.Int, Id)
+                .input('contraseña',sql.NVarChar(50),Contraseña)
+                .input('nombre', sql.NVarChar(50), Nombre)
+                .input('apellido', sql.NVarChar(50), Apellido)
+                .input('fechaNacimiento', sql.Date, FkRol)
+                .query('UPDATE Usuarios SET Contrasenia = @contraseña, Nombre = @nombre, Apellido = @apellido, fechaNacimiento = @fechaNacimiento')
+            returnEntity = result.recordsets[0];
+        } catch (error) {
+            console.log(error);
+        }
+        return returnEntity;
+    }
+
 }
 

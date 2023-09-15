@@ -45,4 +45,9 @@ app.post('/login',async(req,res) =>{
     }
 
 })
+
+app.put('/editarperfil',async(req,res) => {
+    let usuario = Services.updateUsuario(req.body);
+    res.status(202).send(usuario);
+})
 app.listen(port)
