@@ -6,6 +6,7 @@ import { StyleSheet, Text, View,TextInput,Button} from 'react-native';
 import axios from 'axios';
 import Login from './Components/Login';
 import Register from './Components/Register';
+import Perfil from './components/Perfil'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './Components/Home';
@@ -18,7 +19,7 @@ export default function App() {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Pefil" component={Login} />
+        <Stack.Screen name="Perfil" component={Perfil} />
         <Stack.Screen name="Register" component={Register} />
       </Stack.Navigator>
     </NavigationContainer>
