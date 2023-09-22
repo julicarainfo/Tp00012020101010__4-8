@@ -33,11 +33,10 @@ app.post('/login',async(req,res) =>{
         console.log(req.body.contrasenna)
         console.log(u);
         if (u.length === 0) {
-            console.log("HOLAHOLA;¡:", u)
             res.status(401).json({message: "Incorrecto"});
             
         } else {
-            res.status(200).json({u: "Usuario encontrado"})
+            res.status(200).json({usuario: u})
         }
     }catch(error){
         console.log(error)
@@ -47,7 +46,7 @@ app.post('/login',async(req,res) =>{
 })
 
 app.put('/editarperfil',async(req,res) => {
-    let usuario = Services.updateUsuario(req.body);
+    let usuario = Usuario.updateUsuario(req.body);
     res.status(202).send(usuario);
 })
 app.listen(port)

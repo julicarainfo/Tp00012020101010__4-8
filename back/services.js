@@ -11,7 +11,7 @@ export class Usuario {
                 .input("pUsuario", sql.NVarChar(4000), usuario)
                 .input("pContrasenna", sql.NVarChar(4000), contrasenna)
                 .query("SELECT * FROM Usuario WHERE usuario = @pUsuario AND Contrasenna = @pContrasenna");
-            returnEntity = result.recordsets[0];
+            returnEntity = result.recordset[0];
             console.log(returnEntity)
         } catch (error) {
             console.log(error, "");
@@ -60,8 +60,7 @@ export class Usuario {
                 .input('contraseña',sql.NVarChar(50),Contraseña)
                 .input('nombre', sql.NVarChar(50), Nombre)
                 .input('apellido', sql.NVarChar(50), Apellido)
-                .input('fechaNacimiento', sql.Date, FkRol)
-                .query('UPDATE Usuarios SET Contrasenia = @contraseña, Nombre = @nombre, Apellido = @apellido, fechaNacimiento = @fechaNacimiento')
+                .query('UPDATE Usuarios SET Contrasenia = @contraseña, Nombre = @nombre, Apellido = @apellido')
             returnEntity = result.recordsets[0];
         } catch (error) {
             console.log(error);

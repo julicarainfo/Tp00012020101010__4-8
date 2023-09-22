@@ -3,8 +3,8 @@ import { View, StyleSheet } from 'react-native';
 import axios from 'axios';
 
 function Perfil() {
-    const {state} = useLocation();
-    const perfil = state;
+  const {state} = useLocation();
+  const perfil = state;
   const [values, setValues] = useState({});
   const Navigate = useNavigate();
 
@@ -56,7 +56,7 @@ function Perfil() {
       />
       <Button
         title="Guardar"
-        onPress={handleSaveProfile}
+        onPress={handleSubmit}
         buttonStyle={styles.button}
       />
     </View>

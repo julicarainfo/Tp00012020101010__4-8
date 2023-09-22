@@ -7,22 +7,29 @@ import axios from 'axios';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Perfil from './components/Perfil'
+import CompletarPerfil from './Components/Editar/CompletarPerfil';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './Components/Home';
+import { Context } from 'react';
+import usuarioContext from './context/context';
 
 const Stack = createNativeStackNavigator();
+
 export default function App() {
-    
+  const [usuario,setUsuario] = useState([])    
   return (
+    <usuarioContext.Provider value={{usuario, setUsuario}}>
     <NavigationContainer> 
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Perfil" component={Perfil} />
         <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="EditarPerfil" component={CompletarPerfil} />
       </Stack.Navigator>
     </NavigationContainer>
+    </usuarioContext.Provider>
   );
 }
 

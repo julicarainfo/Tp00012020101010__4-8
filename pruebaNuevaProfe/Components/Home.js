@@ -7,22 +7,24 @@ import axios from 'axios';
 import register from './Register';
 import { useNavigation } from '@react-navigation/native';
 import { route } from '@react-navigation/native';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import { Context } from 'react';
+import usuarioContext from '../context/context';
 
 
-export default function Home ({route, navigation}){
+export default function Home (){
     const [perfil,setPefil] = useState([]);
-    const {usuario} = route.params; 
+    const context = useContext(usuarioContext);
     useEffect(()=>{
-        setPefil(route.params)
+        setPefil(context.usuario)
       },[])
 
+      console.log("perfil",perfil)
 
-
-    if (perfil.usuario === "") {
+    if (perfil.apellido === null) {
         return(
             <View style={styles.container}>
-            <Text>Bienvenido </Text>
+            <Text>Bienvenido {perfil.usuario}</Text>
             <Button
                 title="Completa tu perfil"
                 onPress={() => navigation.navigate('Perfil')}

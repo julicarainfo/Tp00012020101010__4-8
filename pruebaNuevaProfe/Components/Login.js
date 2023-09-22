@@ -6,11 +6,14 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import axios from 'axios';
 import register from './Register';
 import { useNavigation } from '@react-navigation/native';
+import { useContext } from 'react';
+import usuarioContext from '../context/context';
 
 export default function Login() {
   const navigation = useNavigation();
   const [Usuario, setUsuario] = React.useState('');
   const [contrasenna, setcontrasenna] = React.useState('');
+  const context = useContext(usuarioContext);
 
   const cambiarContendioU = (t) => {
     setUsuario(t)
@@ -28,7 +31,8 @@ export default function Login() {
       axios.post("http://localhost:5000/login", nuevoUsuario)
         .then(res => {
           console.log("res.data: ", res.data)
-          navigation.navigate('Home', nuevoUsuario.usuario)
+          context.setUsuario(res.data.usuario)
+          navigation.navigate('Home')
         }
         )
     } catch (error) {
@@ -39,7 +43,7 @@ export default function Login() {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder='Ingrese su texto'
+        placeholder='Ingrese su usuario'
         onChangeText={text => cambiarContendioU(text)}
         value={Usuario}
       />
