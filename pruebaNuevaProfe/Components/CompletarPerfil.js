@@ -1,24 +1,22 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
-import usuarioContext from '../../context/context';
+import usuarioContext from '../context/context';
 import { View, Text, TextInput, Button, StyleSheet, handleChange } from 'react-native';
+import { Context } from 'react';
 
 
-function CompletarPerfil() {
+export default function CompletarPerfil() {
   const context = useContext(usuarioContext);
   const [validated, setValidated] = useState(false);
-  const [values, setValues] = useState({});
-  const Navigate = useNavigate();
-  const perfil = context.usuario;
+  const Navigate = useNavigation();
 
     useEffect(() => {
-      console.log("perfil editarperfil:",perfil)
-        setValues({...perfil});
+      console.log("perfil editarperfil:", context.usuario)
     }, []);
 
   const handleChange = (event) => {
-    setValues({...values, [event.target.name]:event.target.value 
+    context.setUsuario({...values, [event.target.name]:event.target.value 
     })
   }
   const handleSubmit = (event) => {
@@ -30,9 +28,8 @@ function CompletarPerfil() {
       event.stopPropagation();
     }
     console.log("values editarperfil: ",values)
-    axios.put('http://localhost:19006/editarperfil', values)
+    axios.put('http://localhost:19006/editarperfil', context.usuario)
       .then(res => {
-        context.setUsuarioLogeado(values)
         Navigate(`/Home`)
       })
       .catch(e => {
@@ -48,19 +45,19 @@ function CompletarPerfil() {
       <TextInput
         style={styles.input}
         onChangeText={(text) => handleChange(text)}
-        value={nombre}
+        value={context.usuario.usuario}
       />
       <Text>Apellido:</Text>
       <TextInput
         style={styles.input}
         onChangeText={(text) => handleChange(text)}
-        value={apellido}
+        value={context.usuario.apellido}
       />
       <Text>Contraseña:</Text>
       <TextInput
         style={styles.input}
         onChangeText={(text) => handleChange(text)}
-        value={contrasena}
+        value={context.usuario.contrasenna}
         secureTextEntry={true} // Para ocultar la contraseña
       />
       <Button title="Enviar" onPress={handleSubmit} />
@@ -68,5 +65,14 @@ function CompletarPerfil() {
     </div>
   );
 }
-
-export default CompletarPerfil;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+  input: {
+    resizeMode: 'contain',
+    borderWidth: 1,
+  },
+});

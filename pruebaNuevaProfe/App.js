@@ -7,7 +7,7 @@ import axios from 'axios';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Perfil from './components/Perfil'
-import CompletarPerfil from './Components/Editar/CompletarPerfil';
+import CompletarPerfil from './Components/CompletarPerfil';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './Components/Home';
@@ -26,7 +26,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Perfil" component={Perfil} />
         <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="EditarPerfil" component={CompletarPerfil} />
+        <Stack.Screen name="CompletarPerfil" component={CompletarPerfil} />
       </Stack.Navigator>
     </NavigationContainer>
     </usuarioContext.Provider>

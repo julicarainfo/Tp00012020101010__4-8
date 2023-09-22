@@ -13,6 +13,7 @@ import usuarioContext from '../context/context';
 
 
 export default function Home (){
+   const navigation = useNavigation();
     const [perfil,setPefil] = useState([]);
     const context = useContext(usuarioContext);
     useEffect(()=>{
@@ -36,6 +37,10 @@ export default function Home (){
         return (
           <View style={styles.container}>
             <Text>Bienvenido {perfil.usuario}  {perfil.apellido}</Text>
+            <Button
+                title="Completa tu perfil"
+                onPress={() => navigation.navigate('CompletarPerfil')}
+                />
           </View>  
 
         )
