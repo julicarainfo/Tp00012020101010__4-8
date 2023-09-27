@@ -28,7 +28,7 @@ export default function Home (){
             <Text>Bienvenido {perfil.usuario}</Text>
             <Button
                 title="Completa tu perfil"
-                onPress={() => navigation.navigate('Perfil')}
+                onPress={() => navigation.navigate('CompletarPerfil')}
                 />
           </View>
         )
@@ -38,7 +38,7 @@ export default function Home (){
           <View style={styles.container}>
             <Text>Bienvenido {perfil.usuario}  {perfil.apellido}</Text>
             <Button
-                title="Completa tu perfil"
+                title="Edita tu perfil"
                 onPress={() => navigation.navigate('CompletarPerfil')}
                 />
           </View>  

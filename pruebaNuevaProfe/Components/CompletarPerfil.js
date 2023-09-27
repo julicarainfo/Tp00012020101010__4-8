@@ -1,10 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, Context } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import usuarioContext from '../context/context';
 import { View, Text, TextInput, Button, StyleSheet, handleChange } from 'react-native';
-import { Context } from 'react';
-
 
 export default function CompletarPerfil() {
   const context = useContext(usuarioContext);
@@ -16,7 +14,9 @@ export default function CompletarPerfil() {
     }, []);
 
   const handleChange = (event) => {
-    context.setUsuario({...values, [event.target.name]:event.target.value 
+    console.log("EVENT", event.target);
+    console.log("event name", event.target.name);
+    context.setUsuario({...context.usuario, [event.target.name] : event.target.value 
     })
   }
   const handleSubmit = (event) => {
@@ -27,10 +27,10 @@ export default function CompletarPerfil() {
       event.preventDefault();
       event.stopPropagation();
     }
-    console.log("values editarperfil: ",values)
+    console.log("values editarperfil: ",context.usuario)
     axios.put('http://localhost:19006/editarperfil', context.usuario)
       .then(res => {
-        Navigate(`/Home`)
+        Navigate.navigate(`Home`)
       })
       .catch(e => {
         console.log(e.response.status, e.data);
@@ -44,20 +44,24 @@ export default function CompletarPerfil() {
       <Text>Nombre:</Text>
       <TextInput
         style={styles.input}
-        onChangeText={(text) => handleChange(text)}
-        value={context.usuario.usuario}
+        onChangeText={(text) => handleChange({name, type, text})}
+        name="usuario"
+        placeholder={context.usuario.usuario}
       />
       <Text>Apellido:</Text>
       <TextInput
         style={styles.input}
-        onChangeText={(text) => handleChange(text)}
-        value={context.usuario.apellido}
+        name="apellido"
+        onChange={(text) => handleChange(text)}
+
+        placeholder={context.usuario.apellido}
       />
       <Text>Contraseña:</Text>
       <TextInput
         style={styles.input}
-        onChangeText={(text) => handleChange(text)}
-        value={context.usuario.contrasenna}
+        onChange={(text) => handleChange(text)}
+        name="contrasenna"
+        placeholder={context.usuario.contrasenna}
         secureTextEntry={true} // Para ocultar la contraseña
       />
       <Button title="Enviar" onPress={handleSubmit} />
