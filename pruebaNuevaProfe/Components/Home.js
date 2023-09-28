@@ -14,18 +14,13 @@ import usuarioContext from '../context/context';
 
 export default function Home (){
    const navigation = useNavigation();
-    const [perfil,setPefil] = useState([]);
     const context = useContext(usuarioContext);
-    useEffect(()=>{
-        setPefil(context.usuario)
-      },[])
 
-      console.log("perfil",perfil)
 
-    if (perfil.apellido === null) {
+    if (context.usuario.apellido === null) {
         return(
             <View style={styles.container}>
-            <Text>Bienvenido {perfil.usuario}</Text>
+            <Text>Bienvenido {context.usuario.usuario}</Text>
             <Button
                 title="Completa tu perfil"
                 onPress={() => navigation.navigate('CompletarPerfil')}
@@ -36,7 +31,7 @@ export default function Home (){
     else
         return (
           <View style={styles.container}>
-            <Text>Bienvenido {perfil.usuario}  {perfil.apellido}</Text>
+            <Text>Bienvenido {context.usuario.usuario} {context.usuario.apellido}</Text>
             <Button
                 title="Edita tu perfil"
                 onPress={() => navigation.navigate('CompletarPerfil')}
@@ -51,4 +46,6 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
-    }})
+    }
+    
+  })

@@ -7,33 +7,45 @@ import { View, Text, TextInput, Button, StyleSheet, handleChange } from 'react-n
 export default function CompletarPerfil() {
   const context = useContext(usuarioContext);
   const [validated, setValidated] = useState(false);
+  const [nombre, setNombre] = useState(context.usuario.usuario);
+  const [apellido, setApellido] = useState(context.usuario.apellido);
+  const [contrasenna, setContra] = useState(context.usuario.contrasenna);
   const Navigate = useNavigation();
 
     useEffect(() => {
       console.log("perfil editarperfil:", context.usuario)
     }, []);
 
-  const handleChange = (event) => {
-    console.log("EVENT", event.target);
-    console.log("event name", event.target.name);
-    context.setUsuario({...context.usuario, [event.target.name] : event.target.value 
-    })
+  const handleChangeName = (v) => {
+    setNombre(v)
+  }
+  const handleChangeApellido = (v) => {
+    setApellido(v)
+  }
+  const handleChangeContra = (v) => {
+    setContra(v)
   }
   const handleSubmit = (event) => {
+    let u = {
+      ID: context.usuario.ID,
+      usuario:nombre,
+      apellido:apellido,
+      contrasenna:contrasenna,
+    }
+    context.setUsuario(u);
     event.preventDefault();
     const form = event.currentTarget;
-
+    console.log("USUARIO", context.usuario)
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
-    console.log("values editarperfil: ",context.usuario)
-    axios.put('http://localhost:19006/editarperfil', context.usuario)
+    axios.put(`http://localhost:5000/editarperfil/${context.usuario.ID}`, context.usuario)
       .then(res => {
         Navigate.navigate(`Home`)
       })
       .catch(e => {
-        console.log(e.response.status, e.data);
+        console.log("DATA",e.response.status, e.data);
       });
     setValidated(true);
   };
@@ -44,7 +56,7 @@ export default function CompletarPerfil() {
       <Text>Nombre:</Text>
       <TextInput
         style={styles.input}
-        onChangeText={(text) => handleChange({name, type, text})}
+        onChangeText={handleChangeName}
         name="usuario"
         placeholder={context.usuario.usuario}
       />
@@ -52,14 +64,13 @@ export default function CompletarPerfil() {
       <TextInput
         style={styles.input}
         name="apellido"
-        onChange={(text) => handleChange(text)}
-
+        onChangeText={handleChangeApellido}
         placeholder={context.usuario.apellido}
       />
       <Text>Contraseña:</Text>
       <TextInput
         style={styles.input}
-        onChange={(text) => handleChange(text)}
+        onChangeText={handleChangeContra}
         name="contrasenna"
         placeholder={context.usuario.contrasenna}
         secureTextEntry={true} // Para ocultar la contraseña

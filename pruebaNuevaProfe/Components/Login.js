@@ -54,8 +54,10 @@ export default function Login() {
         secureTextEntry={true}
         value={contrasenna}
       />
+
       <Button onPress={handleClick} title="Ingresar" style={styles}></Button>
       <Button
+      style={styles}
         title="Registrarse"
         onPress={() => navigation.navigate('Register')}
       />
@@ -70,6 +72,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
+    marginTop: "4px",
+    marginBottom: "4px",
     resizeMode: 'contain',
     borderWidth: 1,
   },
