@@ -31,7 +31,7 @@ export class Usuario {
         let pool = await sql.connect(config);
         let res = await pool.request()
             .input("usuario", sql.NVarChar, nombre)
-            .query("SELECT id FROM usuario WHERE usuario = @usuario");
+            .query("SELECT id FROM Usuario WHERE usuario = @usuario");
         return res.recordset[0];
     }
 
@@ -49,18 +49,18 @@ export class Usuario {
             .input('usuario', sql.Int,fkUsuario )
             .query('INSERT INTO Perfil (usuario,Contrasenna) VALUES (@usuario, @contrasenna)')
     }
-    static updateUsuario = async (usuario) => {
-        const { Id, Contrasenna, Nombre, Apellido} = usuario
+    static updateUsuario = async (id,usuario) => {
+        const { Contrasenna, Nombre, Apellido} = usuario
         let returnEntity = null;
         console.log("Estoy en: update");
         try {
             let pool = await sql.connect(config)
             let result = await pool.request()
-                .input('pId', sql.Int, Id)
+                .input('pId', sql.Int, id)
                 .input('contrasenna',sql.NVarChar(50),Contrasenna)
                 .input('nombre', sql.NVarChar(50), Nombre)
                 .input('apellido', sql.NVarChar(50), Apellido)
-                .query('UPDATE Usuarios SET contrasenna = @contrasenna, nombre = @nombre, apellido = @apellido WHERE ID = @pId')
+                .query('UPDATE Usuario SET contrasenna = @contrasenna, nombre = @nombre, apellido = @apellido WHERE ID = @pId')
             returnEntity = result.recordsets[0];
         } catch (error) {
             console.log(error);

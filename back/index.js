@@ -45,8 +45,8 @@ app.post('/login',async(req,res) =>{
 
 })
 
-app.put('/editarperfil',async(req,res) => {
-    let usuario = Usuario.updateUsuario(req.body);
+app.put('/editarperfil/:id',async(req,res) => {
+    let usuario = Usuario.updateUsuario(req.params.id,req.body);
     res.status(202).send(usuario);
 })
 app.listen(port)
