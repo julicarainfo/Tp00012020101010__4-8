@@ -28,7 +28,7 @@ export default function Login() {
     };
     console.log("usuario:", nuevoUsuario)
     try {
-      axios.post("http://localhost:5000/login", nuevoUsuario)
+      return axios.post("http://localhost:5000/login", nuevoUsuario)
         .then(res => {
           console.log("res.data: ", res.data)
           context.setUsuario(res.data.usuario)
@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
   input: {
     marginTop: "4px",
     marginBottom: "4px",
-    resizeMode: 'contain',
     borderWidth: 1,
   },
 });

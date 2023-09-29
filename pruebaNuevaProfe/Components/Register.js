@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    resizeMode: 'contain',
     borderWidth: 1,
   },
 });

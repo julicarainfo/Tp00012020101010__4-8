@@ -40,7 +40,7 @@ export default function CompletarPerfil() {
       event.preventDefault();
       event.stopPropagation();
     }
-    axios.put(`http://localhost:5000/editarperfil/${context.usuario.ID}`, context.usuario)
+    axios.put(`http://10.152.2.1:5000/editarperfil/${context.usuario.ID}`, context.usuario)
       .then(res => {
         Navigate.navigate(`Home`)
       })
@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    resizeMode: 'contain',
     borderWidth: 1,
   },
 });
