@@ -81,28 +81,19 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre El Proyecto
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+En este Proyecto, vas a poder registrarte, para luego en la home  ver tus datos. Cuando te registras no lo haces con todos los datos qu puede tener tu perfil. Por eso si queres podes usar el boton de completar perfil, para completar tus datos. En caso de que inicies sesion y ya tengas los datos cmpletos te va a salir el boton de Editar Perfil en caso de que quieras cambiar algun dato. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-### Built With
+### Hecho con
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Estos son los frameworks/librerias que usamos. 
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
@@ -120,34 +111,32 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Este es un ejemplo de cómo  configurar el proyecto localmente.
+Para poner en funcionamiento una copia local, segui estos sencillos pasos.
 
-### Prerequisites
+### Requisitos
 
-This is an example of how to list things you need to use the software and how to install them.
+Tenes que instalar: .
 * npm
   ```sh
-  npm install npm@latest -g
+  npm install Axios
+  npm instal expo
   ```
 
-### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+### Como instalarlo
+1. Clonar el repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone [https://github.com/your_username_/Project-Name.git](https://github.com/julicarainfo/Tp00012020101010__4-8.git)
    ```
-3. Install NPM packages
+2. instalar los paquetes NPM 
    ```sh
-   npm install
+   npm i / npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Abrir la base de datos y cambiar el archivo .env 
+   ```sh
+ DB_HOST='El nombre de tu pc'
    ```
+4. Correr la query que esta en el archivo QuerySQL en la base de datos.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
