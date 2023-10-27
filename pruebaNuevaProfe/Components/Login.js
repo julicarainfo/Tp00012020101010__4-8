@@ -11,6 +11,7 @@ import usuarioContext from '../context/context';
 
 export default function Login() {
   const navigation = useNavigation();
+  const [Mail, setMail] = React.useState('');
   const [Usuario, setUsuario] = React.useState('');
   const [contrasenna, setcontrasenna] = React.useState('');
   const context = useContext(usuarioContext);
