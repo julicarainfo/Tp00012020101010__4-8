@@ -6,10 +6,23 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 export default function Register() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyBAOUO-2iFpuApUObu1n3sxnfOJVaHDC-8",
+    authDomain: "tpdaifirebase.firebaseapp.com",
+    projectId: "tpdaifirebase",
+    storageBucket: "tpdaifirebase.appspot.com",
+    messagingSenderId: "792894759437",
+    appId: "1:792894759437:web:2c02aabf39aede9574ab44",
+    measurementId: "G-M8CLK53KGE"
+  };
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app); 
   const navigation = useNavigation();
-  const [Mail, setMail] = React.useState('');
+  const [mail, setMail] = React.useState('');
   const [contrasenna, setcontrasenna] = React.useState('');
 
   const cambiarContendioU = (t) => {
@@ -18,9 +31,9 @@ export default function Register() {
   const cambiarContendioC = (c) => {
     setcontrasenna(c)
   }
-  const  handleClick = () => {
+  const  handleClick  = async () => {
     let nuevoUsuario = {
-      mail: Mail,
+      mail: mail,
       contrasenna: contrasenna,
     };
     console.log("usuario:", nuevoUsuario)
@@ -28,21 +41,16 @@ export default function Register() {
       const auth = getAuth();
       const { user } = await createUserWithEmailAndPassword(
         auth,
-        email,
-        password
+        mail,
+        contrasenna
       );
       const { uid } = user;
       const db = getFirestore();
       await setDoc(doc(db, "users", uid), {
-        nombre,
-        telefono,
-        email,
+        mail,
+        contrasenna,
         uid,
       });
-      setNombre("");
-      setTelefono("");
-      setEmail("");
-      setPassword("");
       Toast.show({
         type: "success",
         text1: "Registro exitoso",
@@ -68,7 +76,7 @@ export default function Register() {
         style={styles.input}
         placeholder='Cree un mail de usuario'
         onChangeText={text => cambiarContendioU(text)}
-        value={Mail}
+        value={mail}
       />
       <TextInput
         style={styles.input}

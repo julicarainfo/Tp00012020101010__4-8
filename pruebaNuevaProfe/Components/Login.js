@@ -8,10 +8,24 @@ import register from './Register';
 import { useNavigation } from '@react-navigation/native';
 import { useContext } from 'react';
 import usuarioContext from '../context/context';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 export default function Login() {
+const firebaseConfig = {
+  apiKey: "AIzaSyBAOUO-2iFpuApUObu1n3sxnfOJVaHDC-8",
+  authDomain: "tpdaifirebase.firebaseapp.com",
+  projectId: "tpdaifirebase",
+  storageBucket: "tpdaifirebase.appspot.com",
+  messagingSenderId: "792894759437",
+  appId: "1:792894759437:web:2c02aabf39aede9574ab44",
+  measurementId: "G-M8CLK53KGE"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app); 
   const navigation = useNavigation();
-  const [Mail, setMail] = React.useState('');
+  const [mail, setMail] = React.useState('');
   const [Usuario, setUsuario] = React.useState('');
   const [contrasenna, setcontrasenna] = React.useState('');
   const context = useContext(usuarioContext);
@@ -22,22 +36,20 @@ export default function Login() {
   const cambiarContendioC = (c) => {
     setcontrasenna(c)
   }
-  const handleClick = () => {
+  const handleClick = async () => {
     let nuevoUsuario = {
-      usuario: Usuario,
+      mail: mail,
       contrasenna: contrasenna,
     };
     console.log("usuario:", nuevoUsuario)
     try {
-      return axios.post("http://localhost:5000/login", nuevoUsuario)
-        .then(res => {
-          console.log("res.data: ", res.data)
-          context.setUsuario(res.data.usuario)
-          navigation.navigate('Home')
-        }
-        )
+      const auth = getAuth();
+      await signInWithEmailAndPassword(auth, mail, contrasenna)
+      const user = userCredential.user;
     } catch (error) {
-      console.log("error")
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log("Errores: ", errorCode," ", errorMessage)
     }
   };
   return (
@@ -46,7 +58,7 @@ export default function Login() {
         style={styles.input}
         placeholder='Ingrese su usuario'
         onChangeText={text => cambiarContendioU(text)}
-        value={Usuario}
+        value={mail}
       />
       <TextInput
         style={styles.input}
