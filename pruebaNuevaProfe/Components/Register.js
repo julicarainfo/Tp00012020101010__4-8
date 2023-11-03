@@ -2,13 +2,13 @@ import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Toast } from 'react-native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-
+import {getFirestore, setDoc, doc} from "firebase/firestore"
 export default function Register() {
   const firebaseConfig = {
     apiKey: "AIzaSyBAOUO-2iFpuApUObu1n3sxnfOJVaHDC-8",
@@ -46,7 +46,7 @@ export default function Register() {
       );
       const { uid } = user;
       const db = getFirestore();
-      await setDoc(doc(db, "users", uid), {
+      await setDoc(doc(db, "users", user.uid), {
         mail,
         contrasenna,
         uid,
@@ -64,6 +64,7 @@ export default function Register() {
         text2: "Ha ocurrido un error al crear el usuario.",
       });
     }
+    navigation.navigate(`Login`)
   };
 
 

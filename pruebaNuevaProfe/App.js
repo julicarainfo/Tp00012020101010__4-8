@@ -13,8 +13,10 @@ import Home from './Components/Home';
 import { Context } from 'react';
 import usuarioContext from './context/context';
 
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+ const [usuario, setUsuario] = useState();
   return (
     <usuarioContext.Provider value={{usuario, setUsuario}}>
     <NavigationContainer> 

@@ -3,8 +3,22 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import usuarioContext from '../context/context';
 import { View, Text, TextInput, Button, StyleSheet, handleChange } from 'react-native';
+import { setDoc, doc, updateDoc, getFirestore } from 'firebase/firestore'
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 export default function CompletarPerfil() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyBAOUO-2iFpuApUObu1n3sxnfOJVaHDC-8",
+    authDomain: "tpdaifirebase.firebaseapp.com",
+    projectId: "tpdaifirebase",
+    storageBucket: "tpdaifirebase.appspot.com",
+    messagingSenderId: "792894759437",
+    appId: "1:792894759437:web:2c02aabf39aede9574ab44",
+    measurementId: "G-M8CLK53KGE"
+  };
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app); 
   const context = useContext(usuarioContext);
   const [validated, setValidated] = useState(false);
   const [nombre, setNombre] = useState(context.usuario.usuario);
@@ -40,13 +54,31 @@ export default function CompletarPerfil() {
       event.preventDefault();
       event.stopPropagation();
     }
-    axios.put(`http://localhost:5000/editarperfil/${context.usuario.ID}`, context.usuario)
-      .then(res => {
-        Navigate.navigate(`Home`)
-      })
-      .catch(e => {
-        console.log("DATA",e.response.status, e.data);
-      });
+    const db = getFirestore();
+    if (context.usuario.nombre != "" && context.usuario.apellido !="") {
+      const fetchData = async () => {
+          try {
+              await updateDoc(doc(db, "perfil", context.usuario.uid), u);
+          } catch (error) {
+              console.error(error)
+          } finally {
+          }
+          navigation.navigate(`Home`)
+      };
+      fetchData() 
+  } else {
+      const fetchData = async () => {
+          try {
+              await setDoc(doc(db, "perfil", context.usuario.uid), u);
+          } catch (error) {
+              console.error(error)
+          } finally {
+          }
+          navigation.navigate(`Home`)
+      };
+      fetchData() 
+  }
+   context.setUsuario(u);
     setValidated(true);
   };
 

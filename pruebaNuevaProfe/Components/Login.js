@@ -26,12 +26,11 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); 
   const navigation = useNavigation();
   const [mail, setMail] = React.useState('');
-  const [Usuario, setUsuario] = React.useState('');
   const [contrasenna, setcontrasenna] = React.useState('');
   const context = useContext(usuarioContext);
 
   const cambiarContendioU = (t) => {
-    setUsuario(t)
+    setMail(t)
   }
   const cambiarContendioC = (c) => {
     setcontrasenna(c)
@@ -44,8 +43,10 @@ const auth = getAuth(app);
     console.log("usuario:", nuevoUsuario)
     try {
       const auth = getAuth();
-      await signInWithEmailAndPassword(auth, mail, contrasenna)
-      const user = userCredential.user;
+      const usuario = await signInWithEmailAndPassword(auth, mail, contrasenna)
+      navigation.navigate(`Home`)
+      context.setUsuario(usuario);
+      console.log("auth: ", auth)
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
