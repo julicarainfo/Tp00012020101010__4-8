@@ -134,9 +134,11 @@ Tenes que instalar: .
 ## Contactos
 
 Julian caraballo --> julicjulian@gmail.com
+</br>
   <a href="https://github.com/othneildrew/Best-README-Template">Github de Julian</a>
 
 Franco Kaliszczak Benitez --> francokaliszczakbenitez@gmail.com
+</br>
   <a href="https://github.com/FrancardoKaliZ">Github de Franco</a>
 
 Andy 
