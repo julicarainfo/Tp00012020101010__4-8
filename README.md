@@ -128,4 +128,18 @@ Tenes que instalar: .
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+
+
+<!-- ABOUT THE PROJECT -->
+## Contactos
+
+Julian caraballo --> julicjulian@gmail.com
+  <a href="https://github.com/othneildrew/Best-README-Template">Github de Julian</a>
+
+Franco Kaliszczak Benitez --> francokaliszczakbenitez@gmail.com
+  <a href="https://github.com/FrancardoKaliZ">Github de Franco</a>
+
+Andy 
+
+
  
