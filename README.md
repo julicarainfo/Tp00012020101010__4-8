@@ -132,10 +132,10 @@ Tenes que instalar: .
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-<img src="https://github.com/julicarainfo/Tp00012020101010__4-8/blob/main/LOGIN%20FOTO.png" alt="" width="100" height="120"/>
-<img src="https://github.com/julicarainfo/Tp00012020101010__4-8/blob/main/REGISTER%20FOTO.png" alt="" width="100" height="120"/>
-<img src="https://github.com/julicarainfo/Tp00012020101010__4-8/blob/main/COMPLETAR%20PERFIL.png" alt="" width="100" height="120"/>
-<img src="https://github.com/julicarainfo/Tp00012020101010__4-8/blob/main/FORM%20COMPLETAR%20PERFIL.png" alt="" width="100" height="120"/>
+<img src="https://github.com/julicarainfo/Tp00012020101010__4-8/blob/main/LOGIN%20FOTO.png" alt="" width="250" height="500"/>
+<img src="https://github.com/julicarainfo/Tp00012020101010__4-8/blob/main/REGISTER%20FOTO.png" alt="" width="250" height="500"/>
+<img src="https://github.com/julicarainfo/Tp00012020101010__4-8/blob/main/COMPLETAR%20PERFIL.png" alt="" width="250" height="500"/>
+<img src="https://github.com/julicarainfo/Tp00012020101010__4-8/blob/main/FORM%20COMPLETAR%20PERFIL.png" alt="" width="250" height="500"/>
 
 
 
