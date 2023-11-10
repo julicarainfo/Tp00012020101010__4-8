@@ -144,11 +144,11 @@ Las contribuciones son lo que hacen que la comunidad de código abierto sea un g
 
 Julian caraballo --> julicjulian@gmail.com
 </br>
-  <ul><a href="https://github.com/othneildrew/Best-README-Template">Github de Julian</a></ul>
+  <lu><a href="https://github.com/othneildrew/Best-README-Template">Github de Julian</a></lu>
 
 Franco Kaliszczak Benitez --> francokaliszczakbenitez@gmail.com
 </br>
-  <ul><a href="https://github.com/FrancardoKaliZ">Github de Franco</a></ul>
+  <lu><a href="https://github.com/FrancardoKaliZ">Github de Franco</a></lu>
 
 Andy 
 
