@@ -133,22 +133,22 @@ PONER FOTOS
 ## Contributors
 Las contribuciones son lo que hacen que la comunidad de código abierto sea un gran lugar para aprender, inspirarse y crear. Cualquier contribución que haga será muy apreciada If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again! Si tiene alguna sugerencia que pueda hacer esto mejor, porfavor realice un fork del repositorio y cree un pull request. También puede simplemente abrir un issue con el tag "enhancement"
 
-   <li>1.realizar un Fork del proyecto</li>
-   <li>2.Cree su Feature Branch</li>
-   <li>3.Realice Commit de sus cambios</li>
-   <li>4.Push al Branch</li>
-   <li>5.Abrir un Pull Request</li>
+   <li>realizar un Fork del proyecto</li>
+   <li>Cree su Feature Branch</li>
+   <li>Realice Commit de sus cambios</li>
+   <li>Push al Branch</li>
+   <li>Abrir un Pull Request</li>
 
 <!-- ABOUT THE PROJECT -->
 ## Contactos
 
 Julian caraballo --> julicjulian@gmail.com
 </br>
-  <lu><a href="https://github.com/othneildrew/Best-README-Template">Github de Julian</a></lu>
+  <li><a href="https://github.com/othneildrew/Best-README-Template">Github de Julian</a></li>
 
 Franco Kaliszczak Benitez --> francokaliszczakbenitez@gmail.com
 </br>
-  <lu><a href="https://github.com/FrancardoKaliZ">Github de Franco</a></lu>
+  <li><a href="https://github.com/FrancardoKaliZ">Github de Franco</a></li>
 
 Andy 
 
