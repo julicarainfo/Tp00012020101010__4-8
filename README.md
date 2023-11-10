@@ -25,19 +25,18 @@
 <div align="center">
     <img src="https://static.vecteezy.com/system/resources/previews/021/919/677/original/login-icon-in-trendy-flat-style-isolated-on-white-background-approach-symbol-for-your-web-site-design-logo-app-ui-illustration-eps10-flat-style-for-graphic-design-vector.jpg" alt="Logo" width="220" height="220"/>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Practica RN</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Primer proyexto de React-Native
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/julicarainfo/Tp00012020101010__4-8/issues"><strong>Reportar error</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://reactnative.dev/">Informacion de RN</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://firebase.google.com/?gad=1&gclid=CjwKCAiAxreqBhAxEiwAfGfndNlEtj3nyT6CFpCGTBBfqU9Xlt6cCPYr_RDNV5R3xEiy1AR6GPdyYRoCONwQAvD_BwE&gclsrc=aw.ds&hl=es-419">Informacion Firebase</a>
+
   </p>
 </div>
 
@@ -83,7 +82,7 @@ El proyecto consta de una app de registro e inicio de sesion, donde uno mismo pu
 Estos son los frameworks/librerias que usamos. 
 
 * NODEJS.
-* FireBase
+* Firebase
 * React Native.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -104,21 +103,28 @@ Tenes que instalar: .
 ### Como instalarlo
 1. Clonar el repo
 
-   `git clone [https://github.com/your_username_/Project-Name.git](https://github.com/julicarainfo/Tp00012020101010__4-8.git)`
+   `git clone https://github.com/julicarainfo/Tp00012020101010__4-8.git`
 
 2. instalar los paquetes NPM 
 
-   `npm i` / `npm install`
+   `npm i`
+   </br>
+    o
+   </br>
+   `npm install`
 
-3. Abrir la base de datos y cambiar el archivo .env 
+4. Abrir la base de datos y cambiar el archivo .env 
 
      `DB_HOST='El nombre de tu pc'`
+   </br>
      `DB_USER='Usuario de la base de datos'`
+   </br>
      `DB_PASSWORD='Contraseña del usuario de la base de datos'`
+   </br>
      `DB_NAME='Nombre de la base de datos'`
  
 
-4. Correr la query que esta en el archivo QuerySQL en la base de datos.
+6. Correr la query que esta en el archivo QuerySQL en la base de datos.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
