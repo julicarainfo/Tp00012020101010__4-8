@@ -54,7 +54,7 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#Getting-started">Getting Started</a>
       <ul>
         <li><a href="#Requisitos">Prerequisites</a></li>
         <li><a href="#Como instalarlo">Installation</a></li>
@@ -77,7 +77,7 @@ El proyecto consta de una app de registro e inicio de sesion, donde uno mismo pu
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
+<!-- Desarrollado con -->
 ### Desarrollado con
 
 Estos son los frameworks/librerias que usamos. 
