@@ -113,8 +113,8 @@ Tenes que instalar: .
 3. Abrir la base de datos y cambiar el archivo .env 
 
      `DB_HOST='El nombre de tu pc'`
-     `DB_USER='Elegir nombre de usuario'`
-     `DB_PASSWORD='Elegir la contraseña'`
+     `DB_USER='Usuario de la base de datos'`
+     `DB_PASSWORD='Contraseña del usuario de la base de datos'`
      `DB_NAME='Nombre de la base de datos'`
  
 
