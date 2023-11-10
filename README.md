@@ -79,7 +79,7 @@ El proyecto consta de una app de registro e inicio de sesion, donde uno mismo pu
 
 
 
-### Hecho con
+### Desarrollado con
 
 Estos son los frameworks/librerias que usamos. 
 
