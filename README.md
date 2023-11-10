@@ -127,7 +127,7 @@ Tenes que instalar: .
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
+PONER FOTOS
 
 
 <!-- ABOUT THE PROJECT -->
