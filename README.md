@@ -23,7 +23,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="[https://github.com/othneildrew/Best-README-Template](https://camo.githubusercontent.com/82d1c2b516b5babc3eb4710efd77f534e56edd2de4a0640e5a27d74b0c2e367a/68747470733a2f2f63646e2d69636f6e732d706e672e666c617469636f6e2e636f6d2f3531322f353038372f353038373537392e706e67)">
+  <a href="https://cdn.dribbble.com/users/1889528/screenshots/7239609/0aba6579301149.5cbf290c5a8dd.jpg">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -104,23 +104,25 @@ Para poner en funcionamiento una copia local, segui estos sencillos pasos.
 Tenes que instalar: .
 * npm --> `npm i`
 * Expo --> `npm i expo-cli -g`
-  ```sh
 
-  ```
   
 ### Como instalarlo
 1. Clonar el repo
-   ```sh
+
    `git clone [https://github.com/your_username_/Project-Name.git](https://github.com/julicarainfo/Tp00012020101010__4-8.git)`
-   ```
+
 2. instalar los paquetes NPM 
-   ```sh
+
    `npm i` / `npm install`
-   ```
+
 3. Abrir la base de datos y cambiar el archivo .env 
-   ```sh
+
  `DB_HOST='El nombre de tu pc'`
-   ```
+ `DB_USER='Elegir nombre de usuario'`
+ `DB_PASSWORD='Elegir la contraseña'`
+ `DB_NAME='Nombre de la base de datos'`
+ 
+
 4. Correr la query que esta en el archivo QuerySQL en la base de datos.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
