@@ -135,11 +135,11 @@ Tenes que instalar: .
 
 Julian caraballo --> julicjulian@gmail.com
 </br>
-  <a href="https://github.com/othneildrew/Best-README-Template">Github de Julian</a>
+  <ul><a href="https://github.com/othneildrew/Best-README-Template">Github de Julian</a></ul>
 
 Franco Kaliszczak Benitez --> francokaliszczakbenitez@gmail.com
 </br>
-  <a href="https://github.com/FrancardoKaliZ">Github de Franco</a>
+  <ul><a href="https://github.com/FrancardoKaliZ">Github de Franco</a></ul>
 
 Andy 
 
