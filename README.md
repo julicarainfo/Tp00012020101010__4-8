@@ -23,7 +23,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="[https://github.com/othneildrew/Best-README-Template](https://camo.githubusercontent.com/82d1c2b516b5babc3eb4710efd77f534e56edd2de4a0640e5a27d74b0c2e367a/68747470733a2f2f63646e2d69636f6e732d706e672e666c617469636f6e2e636f6d2f3531322f353038372f353038373537392e706e67)">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -76,12 +76,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre El Proyecto
 
-En este Proyecto, vas a poder registrarte, para luego en la home  ver tus datos. Cuando te registras no lo haces con todos los datos qu puede tener tu perfil. Por eso si queres podes usar el boton de completar perfil, para completar tus datos. En caso de que inicies sesion y ya tengas los datos cmpletos te va a salir el boton de Editar Perfil en caso de que quieras cambiar algun dato. 
-
-!(https://camo.githubusercontent.com/6691da55de070a6f90ea682a0605a4e9fbf8beba68b990d789231da77e7b9aa8/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374)
-!(https://camo.githubusercontent.com/b5f6f2061027e774c1b2bae88ac6fe1cb95ca0326f3e3a2cdf8528ce4224c4d0/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742532304e61746976652d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374)
-!(https://camo.githubusercontent.com/cececa42a069dbd4c3187bbb79c9a1a8bfe02ebadc2dacc9b246e2fa52d285ff/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4578706f2d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d6578706f)
-!(https://camo.githubusercontent.com/e795ac82cee56c4c492ec6a6933dafe7c7a41d750ab29abe98a26dce977fe0fd/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4178696f732d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d6178696f73)
+El proyecto consta de una app de registro e inicio de sesion, donde uno mismo puede manejar sus datos personales. Todo se actualiza y se guarda en una base de datos. Diseño minimalista.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -108,10 +103,11 @@ Para poner en funcionamiento una copia local, segui estos sencillos pasos.
 
 Tenes que instalar: .
 * npm --> `npm i`
+* Expo --> `npm i expo-cli -g`
   ```sh
 
   ```
-
+  
 ### Como instalarlo
 1. Clonar el repo
    ```sh
@@ -123,7 +119,7 @@ Tenes que instalar: .
    ```
 3. Abrir la base de datos y cambiar el archivo .env 
    ```sh
- DB_HOST='El nombre de tu pc'
+ `DB_HOST='El nombre de tu pc'`
    ```
 4. Correr la query que esta en el archivo QuerySQL en la base de datos.
 
@@ -133,5 +129,4 @@ Tenes que instalar: .
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-Simplemente no tiene un uso que te ayude mucho, ya que solo podes registarte/iniciar sesion y ver tus datos, ademas de poder editarlos. 
+ 
