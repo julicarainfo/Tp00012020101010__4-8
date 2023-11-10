@@ -112,10 +112,10 @@ Tenes que instalar: .
 
 3. Abrir la base de datos y cambiar el archivo .env 
 
- `DB_HOST='El nombre de tu pc'`
- `DB_USER='Elegir nombre de usuario'`
- `DB_PASSWORD='Elegir la contraseña'`
- `DB_NAME='Nombre de la base de datos'`
+     `DB_HOST='El nombre de tu pc'`
+     `DB_USER='Elegir nombre de usuario'`
+     `DB_PASSWORD='Elegir la contraseña'`
+     `DB_NAME='Nombre de la base de datos'`
  
 
 4. Correr la query que esta en el archivo QuerySQL en la base de datos.
