@@ -48,9 +48,9 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#Sobre-el-proyecto">About The Project</a>
       <ul>
-        <li><a href="#Desarrollado con">Built With</a></li>
+        <li><a href="#Desarrollado-con">Built With</a></li>
       </ul>
     </li>
     <li>
@@ -71,7 +71,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## Sobre El Proyecto
+## Sobre el proyecto
 
 El proyecto consta de una app de registro e inicio de sesion, donde uno mismo puede manejar sus datos personales. Todo se actualiza y se guarda en una base de datos. Diseño minimalista.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
