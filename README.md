@@ -50,22 +50,21 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#Desarrollado con">Built With</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#Requisitos">Prerequisites</a></li>
+        <li><a href="#Como instalarlo">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#Usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#Contributing">Contributing</a></li>
+    <li><a href="#Contactos">Contact</a></li>
+
   </ol>
 </details>
 
@@ -130,7 +129,7 @@ Tenes que instalar: .
 PONER FOTOS
 
 <!-- CONTRIBUCIONES -->
-## Contributors
+## Contributing
 Las contribuciones son lo que hacen que la comunidad de código abierto sea un gran lugar para aprender, inspirarse y crear. Cualquier contribución que haga será muy apreciada If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again! Si tiene alguna sugerencia que pueda hacer esto mejor, porfavor realice un fork del repositorio y cree un pull request. También puede simplemente abrir un issue con el tag "enhancement"
 
    <li>realizar un Fork del proyecto</li>
@@ -139,7 +138,7 @@ Las contribuciones son lo que hacen que la comunidad de código abierto sea un g
    <li>Push al Branch</li>
    <li>Abrir un Pull Request</li>
 
-<!-- ABOUT THE PROJECT -->
+<!-- Contacts -->
 ## Contactos
 
 Julian caraballo --> julicjulian@gmail.com
