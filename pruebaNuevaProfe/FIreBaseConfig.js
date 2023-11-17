@@ -9,6 +9,7 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyBAOUO-2iFpuApUObu1n3sxnfOJVaHDC-8",
   authDomain: "tpdaifirebase.firebaseapp.com",
+  databaseUrl: "https://tpdaifirebase.southamerica-east1.firebasedatabase.app",
   projectId: "tpdaifirebase",
   storageBucket: "tpdaifirebase.appspot.com",
   messagingSenderId: "792894759437",
@@ -17,5 +18,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const firebaseApp = initializeApp(firebaseConfig);
+const analytics = getAnalytics(firebaseApp);
+
+export default firebaseApp;

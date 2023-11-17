@@ -4,21 +4,12 @@ import axios from 'axios';
 import usuarioContext from '../context/context';
 import { View, Text, TextInput, Button, StyleSheet, handleChange } from 'react-native';
 import { setDoc, doc, updateDoc, getFirestore } from 'firebase/firestore'
-import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import firebaseApp from '../FIreBaseConfig';
 
 export default function CompletarPerfil() {
-  const firebaseConfig = {
-    apiKey: "AIzaSyBAOUO-2iFpuApUObu1n3sxnfOJVaHDC-8",
-    authDomain: "tpdaifirebase.firebaseapp.com",
-    projectId: "tpdaifirebase",
-    storageBucket: "tpdaifirebase.appspot.com",
-    messagingSenderId: "792894759437",
-    appId: "1:792894759437:web:2c02aabf39aede9574ab44",
-    measurementId: "G-M8CLK53KGE"
-  };
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app); 
+
+  const auth = getAuth(firebaseApp); 
   const context = useContext(usuarioContext);
   const [validated, setValidated] = useState(false);
   const [nombre, setNombre] = useState(context.usuario.usuario);
@@ -36,15 +27,11 @@ export default function CompletarPerfil() {
   const handleChangeApellido = (v) => {
     setApellido(v)
   }
-  const handleChangeContra = (v) => {
-    setContra(v)
-  }
   const handleSubmit = (event) => {
     let u = {
-      ID: context.usuario.ID,
+      uid: context.usuario.user.uid,
       usuario:nombre,
       apellido:apellido,
-      contrasenna:contrasenna,
     }
     context.setUsuario(u);
     event.preventDefault();
@@ -54,30 +41,19 @@ export default function CompletarPerfil() {
       event.preventDefault();
       event.stopPropagation();
     }
-    const db = getFirestore();
-    if (context.usuario.nombre != "" && context.usuario.apellido !="") {
+    const db = getFirestore(firebaseApp);
+    console.log("URMOTHER", db);
+    console.log("AHSI", u.uid);
       const fetchData = async () => {
           try {
-              await updateDoc(doc(db, "perfil", context.usuario.uid), u);
+              const res = await setDoc(doc(db, "users", u.uid), u);
+              console.log("RESUPDATE", res);
           } catch (error) {
               console.error(error)
-          } finally {
           }
-          navigation.navigate(`Home`)
+          //navigation.navigate(`Home`)
       };
       fetchData() 
-  } else {
-      const fetchData = async () => {
-          try {
-              await setDoc(doc(db, "perfil", context.usuario.uid), u);
-          } catch (error) {
-              console.error(error)
-          } finally {
-          }
-          navigation.navigate(`Home`)
-      };
-      fetchData() 
-  }
    context.setUsuario(u);
     setValidated(true);
   };
@@ -98,14 +74,6 @@ export default function CompletarPerfil() {
         name="apellido"
         onChangeText={handleChangeApellido}
         placeholder={context.usuario.apellido}
-      />
-      <Text>Contraseña:</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={handleChangeContra}
-        name="contrasenna"
-        placeholder={context.usuario.contrasenna}
-        secureTextEntry={true} // Para ocultar la contraseña
       />
       <Button title="Enviar" onPress={handleSubmit} />
     </View>

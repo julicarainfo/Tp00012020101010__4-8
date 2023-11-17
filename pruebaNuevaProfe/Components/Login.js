@@ -11,24 +11,13 @@ import usuarioContext from '../context/context';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import firebaseApp from '../FIreBaseConfig';
 
 export default function Login() {
-const firebaseConfig = {
-  apiKey: "AIzaSyBAOUO-2iFpuApUObu1n3sxnfOJVaHDC-8",
-  authDomain: "tpdaifirebase.firebaseapp.com",
-  projectId: "tpdaifirebase",
-  storageBucket: "tpdaifirebase.appspot.com",
-  messagingSenderId: "792894759437",
-  appId: "1:792894759437:web:2c02aabf39aede9574ab44",
-  measurementId: "G-M8CLK53KGE"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app); 
   const navigation = useNavigation();
   const [mail, setMail] = React.useState('');
   const [contrasenna, setcontrasenna] = React.useState('');
   const context = useContext(usuarioContext);
-
   const cambiarContendioU = (t) => {
     setMail(t)
   }
@@ -42,11 +31,11 @@ const auth = getAuth(app);
     };
     console.log("usuario:", nuevoUsuario)
     try {
-      const auth = getAuth();
+      const auth = getAuth(firebaseApp);
       const usuario = await signInWithEmailAndPassword(auth, mail, contrasenna)
       navigation.navigate(`Home`)
       context.setUsuario(usuario);
-      console.log("auth: ", auth)
+      console.log("auth: ", usuario);
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
