@@ -17,29 +17,15 @@ export default function Home (){
     const context = useContext(usuarioContext);
 
 
-    if (context.usuario.apellido === undefined) {
+
         return(
             <View style={styles.container}>
             <Text>Bienvenido {context.usuario.usuario}</Text>
             <Button
-                title="Completa tu perfil"
-                onPress={() => navigation.navigate('CompletarPerfil')}
+                title="Ver perfil"
+                onPress={() => navigation.navigate('Perfil')}
                 />
           </View>
-        )
-    }
-    else
-        return (
-        
-          <View style={styles.container}>
-            {console.log("apellido", context.usuario.apellido)}
-            <Text>Bienvenido {context.usuario.usuario} {context.usuario.apellido}</Text>
-            <Button
-                title="Edita tu perfil"
-                onPress={() => navigation.navigate('CompletarPerfil')}
-                />
-          </View>  
-
         )
 }
 

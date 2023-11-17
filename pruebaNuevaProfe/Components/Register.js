@@ -17,6 +17,7 @@ export default function Register() {
   const [contrasenna, setcontrasenna] = React.useState('');
   let nombre = "";
   let apellido ="";
+  let telefono ="";
   const cambiarContendioU = (t) => {
     setMail(t)
   }
@@ -42,7 +43,8 @@ export default function Register() {
         contrasenna,
         uid,
         nombre,
-        apellido
+        apellido,
+        telefono
       });
       /*Toast.show({
         type: "success",

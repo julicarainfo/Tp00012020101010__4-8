@@ -14,7 +14,7 @@ export default function CompletarPerfil() {
   const [validated, setValidated] = useState(false);
   const [nombre, setNombre] = useState(context.usuario.usuario);
   const [apellido, setApellido] = useState(context.usuario.apellido);
-  const [contrasenna, setContra] = useState(context.usuario.contrasenna);
+  const [telefono, setTelefono] = useState(context.usuario.telefono);
   const Navigate = useNavigation();
 
     useEffect(() => {
@@ -27,11 +27,15 @@ export default function CompletarPerfil() {
   const handleChangeApellido = (v) => {
     setApellido(v)
   }
+  const handleChangeTelefono = (v) => {
+    setTelefono(v)
+  }
   const handleSubmit = (event) => {
     let u = {
       uid: context.usuario.user.uid,
       usuario:nombre,
       apellido:apellido,
+      telefono:telefono
     }
     context.setUsuario(u);
     event.preventDefault();
@@ -74,6 +78,13 @@ export default function CompletarPerfil() {
         name="apellido"
         onChangeText={handleChangeApellido}
         placeholder={context.usuario.apellido}
+      />
+       <Text>Telefono:</Text>
+      <TextInput
+        style={styles.input}
+        name="telefono"
+        onChangeText={handleChangeTelefono}
+        placeholder={context.usuario.telefono}
       />
       <Button title="Enviar" onPress={handleSubmit} />
     </View>

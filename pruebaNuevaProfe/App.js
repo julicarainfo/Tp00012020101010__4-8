@@ -10,6 +10,7 @@ import CompletarPerfil from './Components/CompletarPerfil';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './Components/Home';
+import Perfil from './Components/Perfil';
 import { Context } from 'react';
 import usuarioContext from './context/context';
 
@@ -22,6 +23,7 @@ export default function App() {
     <NavigationContainer> 
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Perfil" component={Perfil} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="CompletarPerfil" component={CompletarPerfil} />
