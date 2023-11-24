@@ -13,6 +13,7 @@ import Home from './Components/Home';
 import Perfil from './Components/Perfil';
 import { Context } from 'react';
 import usuarioContext from './context/context';
+import VerDetalle from './Components/verDetalle';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="CompletarPerfil" component={CompletarPerfil} />
+        <Stack.Screen name="VerDetalle" component={VerDetalle} />
       </Stack.Navigator>
     </NavigationContainer>
     </usuarioContext.Provider>
